@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="slider/css/swiper.css">
+    <!-- Link JS -->
+    <script src="slider/js/jquery-1.11.0.min.js"></script>
+    <script src="slider/js/jquery.mobile.custom.js"></script>
+    <script src="slider/js/tap.js"></script>
+</head>
+<body>
+<!-- Swiper -->
+<main>
+    <section class="top-menu" style="display: none;">
+        <div class="menu-background"></div>
+        <div class="goMainPage" onclick="webkit.messageHandlers.goMainPage.postMessage('goMainPage');">Завершить презентацию!</div>
+    </section>
+    <section class="swiper-container">
+        <div class="swiper-wrapper"></div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-bullets"></div>
+    </section>
+    <section class="bottom-menu" style="display: none;">
+        <div class="menu-background"></div>
+    </section>
+</main>
+<script src="slider/js/swiper.js"></script>
+</body>
+</html>
