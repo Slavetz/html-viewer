@@ -40,10 +40,24 @@ func initDocumentsModel(){
         } else {
             item["link"] = nil
         }
-        
-        //todo: попытаться прочитать project.json если ок > поменять title
+                
+        let jsonUrl = getDocumentsURL().appendingPathComponent(folder+"/project.json")
+        let jsonData = try? Data(contentsOf: jsonUrl, options: .mappedIfSafe)
+        if (jsonData != nil) {
+            let jsonResult = try? JSONSerialization.jsonObject(with: jsonData!, options: .mutableLeaves)
+            if let json = jsonResult as? Dictionary<String, AnyObject>,
+                let name = json["name"] {
+                // do stuff
+                item["title"] = name as! String
+            }
+        } else {
+            print(folder+"/project.json")
+        }
         
         return item
+        
+    }).filter({ (item) -> Bool in
+        item["link"] != nil
     })
     
 }
