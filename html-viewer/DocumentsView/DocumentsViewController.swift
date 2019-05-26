@@ -10,6 +10,8 @@ import UIKit
 
 class DocumentsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    let myModal = ModalViewController()
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -32,6 +34,13 @@ class DocumentsViewController: UIViewController, UICollectionViewDelegate, UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = DocumentsItemsObject[indexPath.row]
         print(item["link"] ?? "nil")
+        
+        /*
+        myModal.modalPresentationStyle = .fullScreen
+        present(myModal, animated: true, completion: {
+            self.myModal.webView.load(URLRequest(url: URL(string: link)!))
+        })
+        */
         
     }
     

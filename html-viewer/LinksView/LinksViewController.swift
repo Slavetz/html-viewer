@@ -16,6 +16,8 @@ class LinksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet weak var tableView: UITableView!
     
+    let myModal = ModalViewController()
+    
     // +++++++++++++++++++++++++++++++++++++++++++++++++++
     // +++++++++++++++++++++++++++++++++++++++++++++++++++
     // Событие при загрузке ячейки
@@ -90,15 +92,13 @@ class LinksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     // Обработка нажатия на ячейку
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print(LinksItemsObject[indexPath.row])
         let link = LinksItemsObject[indexPath.row]["link"] as! String
         
-        let modal = ModalViewController()
-        modal.modalPresentationStyle = .fullScreen
-        modal.url = link
-        present(modal, animated: true, completion: nil)
-        
-        
+        myModal.modalPresentationStyle = .fullScreen
+        present(myModal, animated: true, completion: {
+            self.myModal.webView.load(URLRequest(url: URL(string: link)!))
+        })
+
     }
     
     // +++++++++++++++++++++++++++++++++++++++++++++++++++

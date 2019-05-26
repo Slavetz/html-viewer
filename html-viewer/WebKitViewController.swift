@@ -61,11 +61,15 @@ class ModalViewController: UIViewController, WKUIDelegate, WKNavigationDelegate 
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        webView.load(URLRequest(url: URL(string: url )!))
+        //webView.load(URLRequest(url: URL(string: url )!))
         
         let button = MyButoon()
         self.view.addSubview(button)
         button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+    }
+    
+    func loadUrl(url:String){
+        webView.load(URLRequest(url: URL(string: url )!))
     }
     
     func MyButoon() -> UIButton {

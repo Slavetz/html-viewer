@@ -40,7 +40,7 @@ func initDocumentsModel(){
         } else {
             item["link"] = nil
         }
-                
+        
         let jsonUrl = getDocumentsURL().appendingPathComponent(folder+"/project.json")
         let jsonData = try? Data(contentsOf: jsonUrl, options: .mappedIfSafe)
         if (jsonData != nil) {
@@ -50,8 +50,6 @@ func initDocumentsModel(){
                 // do stuff
                 item["title"] = name as! String
             }
-        } else {
-            print(folder+"/project.json")
         }
         
         return item
@@ -80,7 +78,7 @@ func getFolders() -> [String] {
         
     } catch {
         
-        print("Error while enumerating files \(docsURL): \(error.localizedDescription)")
+        //print("Error while enumerating files \(docsURL): \(error.localizedDescription)")
         return []
         
     }
@@ -97,7 +95,7 @@ func copyFolders() {
     if let folderPath = ProcessInfo.processInfo.environment["SRCROOT"] {
         copyFiles(pathFromBundle: folderPath + "/Documents", pathDestDocs: docsURL.path)
     } else {
-        print("cant get folderPath")
+        //print("cant get folderPath")
     }
     
     
@@ -113,6 +111,6 @@ func copyFiles(pathFromBundle: String, pathDestDocs: String) {
             try? fileManager.copyItem(atPath: "\(pathFromBundle)/\(filename)", toPath: "\(pathDestDocs)/\(filename)")
         }
     } catch {
-        print("\nError\n")
+        //print("\nError\n")
     }
 }
