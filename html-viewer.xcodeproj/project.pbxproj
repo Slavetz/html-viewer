@@ -11,7 +11,6 @@
 		F906532C2298A45300D11222 /* DocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F906532B2298A45300D11222 /* DocumentsViewController.swift */; };
 		F906532E2298A45300D11222 /* LinksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F906532D2298A45300D11222 /* LinksViewController.swift */; };
 		F90653312298A45300D11222 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F906532F2298A45300D11222 /* Main.storyboard */; };
-		F90653332298A45300D11222 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F90653322298A45300D11222 /* Assets.xcassets */; };
 		F90653362298A45300D11222 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90653342298A45300D11222 /* LaunchScreen.storyboard */; };
 		F90653402298A79B00D11222 /* LinksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F906533F2298A79B00D11222 /* LinksModel.swift */; };
 		F90653422298A7C000D11222 /* DocumentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90653412298A7C000D11222 /* DocumentsModel.swift */; };
@@ -25,7 +24,6 @@
 		F906532B2298A45300D11222 /* DocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewController.swift; sourceTree = "<group>"; };
 		F906532D2298A45300D11222 /* LinksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksViewController.swift; sourceTree = "<group>"; };
 		F90653302298A45300D11222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F90653322298A45300D11222 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F90653352298A45300D11222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F90653372298A45300D11222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F906533F2298A79B00D11222 /* LinksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksModel.swift; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 				F906533D2298A72B00D11222 /* DocumentsView */,
 				F906533E2298A76E00D11222 /* LinksView */,
 				F906532F2298A45300D11222 /* Main.storyboard */,
-				F90653322298A45300D11222 /* Assets.xcassets */,
 				F90653342298A45300D11222 /* LaunchScreen.storyboard */,
 				F90653372298A45300D11222 /* Info.plist */,
 			);
@@ -162,7 +159,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F90653362298A45300D11222 /* LaunchScreen.storyboard in Resources */,
-				F90653332298A45300D11222 /* Assets.xcassets in Resources */,
 				F90653312298A45300D11222 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

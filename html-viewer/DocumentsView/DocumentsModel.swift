@@ -7,13 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-var DocumentsItemsObject:[[String:String]] = [
-    ["title":"Folder-1","preview":"Folder-1/preview.jpg"],
-    ["title":"Folder-2","preview":"Folder-2/preview.jpg"],
-    ["title":"Folder-3","preview":"Folder-3/preview.jpg"],
-    ["title":"Folder-4","preview":"Folder-4/preview.jpg"]
-]
+var DocumentsItemsObject:[[String:Any]] = []
 
 func initDocumentsModel(){
     
@@ -25,8 +21,29 @@ func initDocumentsModel(){
     print("It's a device")
     #endif
     
-    DocumentsItemsObject = getFolders().map({ (folder: String) ->[String:String] in
-        return ["title": folder, "preview": folder+"/preview.jpg"]
+    DocumentsItemsObject = getFolders().map({ (folder: String) -> [String:Any] in
+        
+        var item:[String:Any] = ["title": folder]
+        
+        let imageUrl = getDocumentsURL().appendingPathComponent(folder+"/preview.jpg")
+        let imageData = try? Data(contentsOf: imageUrl)
+        if (imageData != nil) {
+            item["preview"] = UIImage(data: imageData!)
+        } else {
+            item["preview"] = UIImage()
+        }
+        
+        let htmlUrl = getDocumentsURL().appendingPathComponent(folder+"/index.html")
+        let htmlData = try? Data(contentsOf: htmlUrl)
+        if (htmlData != nil) {
+            item["link"] = htmlUrl
+        } else {
+            item["link"] = nil
+        }
+        
+        //todo: попытаться прочитать project.json если ок > поменять title
+        
+        return item
     })
     
 }
